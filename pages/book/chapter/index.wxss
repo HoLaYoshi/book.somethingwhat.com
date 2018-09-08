@@ -1,0 +1,201 @@
+/* pages/book/chapter/index.wxss */
+
+page {
+  line-height: 1.6em;
+}
+
+.fa {
+  font-size: 32rpx;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+}
+
+.t-chapter-select {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.t-chapter-select label {
+  padding: 2px 10px;
+}
+
+/* .t-chapter-select label:hover {
+  background-color: #eee;
+} */
+
+.body-view {
+  padding: 0px 8px;
+  min-height: 400px;
+}
+
+.t-chapter-select>label {
+  /* display: none; */
+  text-decoration: underline;
+}
+
+.middle {
+  position: fixed;
+  width: 80%;
+  height: 60%;
+  top: 20%;
+  left: 10%;
+  background-color: #000;
+  opacity: 0.5;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* 底部设置 */
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  color: #009a61;
+  opacity: 0.9;
+  text-align: center;
+  line-height: 36px;
+}
+
+.footer>view {
+  border-top: 1px solid #ddd;
+}
+
+.footer .fa {
+  font-size: 32rpx;
+}
+
+/* 模态框 */
+
+.show-btn {
+  margin-top: 100rpx;
+  color: #2c2;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 25%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 36rpx;
+  opacity: 0.9;
+  border: 1px solid #eee;
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  /* padding: 30rpx 32rpx; */
+  padding: 0 2px;
+}
+
+.modal-content > scroll-view {
+  padding: 30rpx 32rpx;
+}
+
+.modal-content > view {
+  padding: 0 0 10px;
+}
+
+.modal-content view {
+  font-size: 14px;
+  color: #333;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+  background-color: #dedede;
+}
+
+.btn-confirm {
+  width: 50%;
+  color: green;
+  text-align: center;
+  background-color: #efefef;
+}
+
+slider {
+  margin: 2px 0;
+}
+
+.daytime {
+  background-color: #fff;
+  color: #000;
+}
+
+.nighttime {
+  background-color: #000;
+  color: #fff;
+}
+
+switch, slider, icon {
+  transform: scale(0.8);
+}
+
+.modal-content .group button {
+  margin-right: 5px;
+  line-height: 28px;
+}

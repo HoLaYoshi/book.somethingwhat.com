@@ -1,0 +1,231 @@
+/* pages/book/search/index.wxss */
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+input {
+  border: 1px solid #ccc;
+}
+
+button::after {
+  border-radius: unset;
+}
+
+.other-button-hover {
+  background-color: #008300 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.input-search {
+  width: 71%;
+  float: left;
+  padding: 3px 5px 2px;
+  border-right: none;
+  font-size: 30rpx;
+}
+
+.input-btn {
+  width: 25%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 31rpx!important;
+}
+
+/*list*/
+
+/**index.wxss**/
+
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #fff;
+}
+
+.project-container {
+  margin: 0;
+}
+
+.project-item {
+  background-color: #fff;
+  font-size: 30rpx;
+  border-bottom: 1px solid #efeff4;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.project-item:last-child {
+  margin-bottom: 48rpx;
+  border-bottom: none;
+}
+
+.item-head {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 27rpx 0 0;
+  overflow: hidden;
+}
+
+.post-title-before {
+  width: 36rpx;
+  height: 2rpx;
+  overflow: hidden;
+  background-color: #d38297;
+  float: left;
+  margin-top: 39rpx;
+}
+
+.post-title {
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 25rpx;
+  /**font-size: 26rpx;
+  color: #D38297;
+  border: 1px solid #D38297;**/
+  border-radius: 50rpx;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  color: #f00;
+  font-size: 32rpx;
+  text-decoration: underline;
+}
+
+.post-title:hover {
+  background-color: #eee;
+}
+
+.project-img {
+  width: 96px;
+  height: 120px;
+  float: left;
+  padding-right: 8px;
+  padding-left: 10px;
+}
+
+.project-img image {
+  width: 100%;
+  height: 100%;
+  padding-top: 5px;
+}
+
+.project-price {
+  color: #555;
+  float: right;
+  height: 42rpx;
+  line-height: 42rpx;
+  overflow: hidden;
+  position: relative;
+  top: 24rpx;
+}
+
+.item-body {
+  color: #6e6e70;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  padding: 0 16rpx;
+  min-height: 120px;
+}
+
+.project-title {
+  line-height: 50rpx;
+  color: #555;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.project-title .link {
+  color: #002cc4;
+  font-size: 26rpx;
+  white-space: initial;
+}
+
+.project-title .link:hover {
+  background-color: #eee;
+}
+
+.project-price label, .project-title label {
+  color: #aaa;
+}
+
+.project-desc {
+  line-height: 45rpx;
+  padding: 15rpx 24rpx 5px 6rpx;
+  /*overflow: hidden;*/
+  text-overflow: ellipsis;
+  /*display: -webkit-box;*/
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  /*max-height: 84rpx;*/
+  word-break: break-all;
+  color: #aaa;
+  min-height: 30px;
+}
+
+.project-foot {
+  padding: 15rpx 0;
+  line-height: 33rpx;
+  font-size: 24rpx;
+  color: #9e9e9e;
+  overflow: hidden;
+}
+
+.bid-num {
+  float: left;
+  line-height: 28rpx;
+  vertical-align: middle;
+}
+
+.public-time {
+  float: right;
+  margin-right: 10rpx;
+  line-height: 28rpx;
+  vertical-align: middle;
+}
+
+.s-source {
+  font-size: 32rpx;
+  color: #666;
+  padding: 10px 5px;
+}
+
+.s-source .tab {
+  padding: 0 5px;
+  line-height: 26px;
+}
+
+.s-source .tab.active {
+  color: green;
+  border-bottom: 2px solid green;
+  padding-bottom: 0px;
+  font-weight: 600;
+}
+
+.s-source .tab.active1 {
+  color: green;
+  border-radius: 5px;
+  padding: 3px 8px;
+  border: 1px solid green;
+  opacity: 0.8;
+}

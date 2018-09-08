@@ -1,0 +1,12 @@
+<!--pages/user/message/index.wxml-->
+<view class='records'>
+  <text>系统信息：</text>
+  <block wx:if="{{messages == null || messages.length==0}}">
+    <view class='color-gray'>-- 无 (*・ω・) --</view>
+  </block>
+  <block wx:if="{{messages.length>0}}">
+    <view class='list' wx:for="{{messages}}" wx:key="key">
+      <view class='item'>【{{item.Create_Time}}】{{item.Content}}</view>
+    </view>
+  </block>
+</view>

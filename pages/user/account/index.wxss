@@ -1,0 +1,159 @@
+/* pages/user/account/index.wxss */
+
+.main {
+  font-size: 14px;
+}
+
+.main .top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 228rpx;
+}
+
+.main .item {
+  padding: 8px 10px;
+}
+
+.main .item>label {
+  padding-right: 10px;
+}
+
+.fa-angle-right {
+  padding-left: 5px;
+}
+
+.btn-recharge {
+  width: 80%;
+  background-color: #fff !important;
+  color: #1aad19 !important;
+}
+
+.btn-recharge:after {
+  border: 1px solid #1aad19;
+}
+
+/* 模态框 */
+
+.show-btn {
+  margin-top: 100rpx;
+  color: #2c2;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 25%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 36rpx;
+  opacity: 0.9;
+  border: 1px solid #eee;
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  /* padding: 30rpx 32rpx; */
+  padding: 0 2px;
+}
+
+.modal-content > scroll-view {
+  padding: 30rpx 32rpx;
+}
+
+.modal-content > view {
+  padding: 0 0 10px;
+}
+
+.modal-content view {
+  font-size: 14px;
+  color: #333;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+  background-color: #dedede;
+}
+
+.btn-confirm {
+  width: 50%;
+  color: green;
+  text-align: center;
+  background-color: #efefef;
+}
+
+.modal-content .group button {
+  margin-right: 5px;
+  line-height: 28px;
+}
+
+/* .modal-content label:hover {
+  background-color: green;
+  color:#fff;
+  font-weight: bold;
+}  */
+
+.modal-content{
+  padding-bottom: 10px;
+}
+
+.modal-content .radio {
+  padding:10px;
+}

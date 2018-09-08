@@ -1,0 +1,135 @@
+/* pages/test/index.wxss */
+
+.container {
+  font-size: 14px;
+  padding: 150rpx 0;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 228rpx;
+  margin-bottom: 15px;
+}
+
+.userinfo-avatar {
+  width: 64px;
+  height: 64px;
+  margin: 20rpx;
+  border-radius: 50%;
+  min-width: 128rpx;
+  min-height: 128rpx;
+  border: 1px solid #eee;
+  background-color: #fff;
+  /* transform: scale(0.2); */
+  overflow: hidden;
+  background-image: url(https://book.somethingwhat.com/images/cat-avatar.png);
+}
+
+.userinfo-nickname {
+  color: blue;
+  text-decoration: underline;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+input {
+  border: 1px solid #ccc;
+}
+
+button::after {
+  border-radius: unset;
+}
+
+.other-button-hover {
+  background-color: #008300 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.input-search {
+  width: 71%;
+  float: left;
+  padding: 3px 5px 2px;
+  border-right: none;
+  font-size: 30rpx;
+}
+
+.input-btn {
+  width: 25%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 31rpx!important;
+}
+
+.footer {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  font-size: 30rpx;
+  padding-left: 5px;
+}
+
+.footer label {
+  float: left;
+  color: #999;
+}
+
+.footer .b-n {
+  color: #000;
+}
+
+.footer navigator {
+  float: left;
+  text-decoration: underline;
+  color: blue;
+}
+
+.footer .item {
+  clear: both;
+  line-height: 50rpx;
+}
+
+.btn-contact {
+  border: none;
+  background-color: #fff;
+  font-size: 26rpx;
+  color: blue;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+.btn-contact::after {
+  border: none;
+}
+
+.btn-contact-hover {
+  background-color: #ddd !important;
+}
+
+.clear {
+  clear: both;
+}
+
+.t {
+  text-decoration: underline;
+}
+
+@keyframes mymove {
+  from {
+    top: 0rpx;
+  }
+
+  to {
+    top: -1500px;
+  }
+}
+
+.city {
+  color: green;
+  text-align: right;
+  padding: 5px 10px 0;
+  font-size: 14px;
+}

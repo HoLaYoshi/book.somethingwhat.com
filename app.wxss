@@ -1,0 +1,31 @@
+/**app.wxss**/
+@import '/lib/css/font-awesome.wxss';
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.line-top{
+  border-top:1px solid #eee;
+}
+.color-gray{
+  color:#aaa;
+}
+.color-green{
+  color:green;
+}
+.font-lg{
+  font-size: 1.2em;
+}
+.font-sm{
+  font-size: 0.8em;
+}
+.fa-angle-right{
+  padding:0 2px;
+}

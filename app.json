@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/book/home/index",
+    "pages/book/search/index",
+    "pages/book/intro/index",
+    "pages/book/chapter/index",
+    "pages/user/home/index",
+    "pages/user/account/index",
+    "pages/user/collection/index",
+    "pages/user/lastreading/index",
+    "pages/user/message/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "喵喵看书",
+    "navigationBarTextStyle": "white"
+  }
+}

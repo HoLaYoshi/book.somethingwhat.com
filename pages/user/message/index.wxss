@@ -1,0 +1,18 @@
+/* pages/user/feedback/index.wxss */
+
+.section {
+  width: 90%;
+  padding: 5%;
+  font-size: 14px;
+}
+
+.records {
+  padding: 1px 5px;
+  font-size: 14px;
+}
+
+.records .list{}
+
+.records .list .item{
+  line-height: 26px;
+}

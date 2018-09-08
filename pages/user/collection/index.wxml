@@ -1,0 +1,16 @@
+<!--pages/user/collection/index.wxml-->
+<view style='text-align:center;width:100%;padding:15px 0 10px;color:#ccc;'>
+  <text style="color:#333;">共{{booklist.length}}本</text>
+  <view style='width:100%;color:#eee'>-----</view>
+</view>
+
+<view class="main" style="width:100%;">
+  <view class="item line-top" wx:for="{{booklist}}" wx:key="key" bindtap='onRedirectToBookIntro' data-id='{{item.Id}}'>
+    <label class='color-green'>【{{item.Book_Name}}】{{item.Author}}</label>
+    <text class='color-gray'>[{{item.Book_Classify}}]</text>
+    <text class='color-gray font-sm' style="float:right">{{item.Create_Time}}</text>
+  </view>
+
+  <view class="item line-top"></view>
+
+</view>

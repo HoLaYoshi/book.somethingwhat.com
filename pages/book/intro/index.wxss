@@ -1,0 +1,57 @@
+/* pages/book/intro/index.wxss */
+
+.item-body {
+  padding: 8px;
+  display: block;
+  font-size: 32rpx;
+}
+
+.project-title {
+  line-height: 50rpx;
+  color: #555;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  /*overflow: hidden;
+  white-space: nowrap;*/
+  text-overflow: ellipsis;
+}
+
+.project-title .link {
+  color: #002cc4;
+  font-size: 26rpx;
+  white-space: initial;
+}
+
+.project-title label {
+  color: #aaa;
+}
+
+.project-title .back {
+  color: blue;
+  float: right;
+}
+
+.chapterlist {
+  margin-bottom: 20px;
+}
+
+.chapterlist .m {
+  font-size: 32rpx;
+  color: blue;
+  line-height: 60rpx;
+}
+
+.chapter-sort {
+  padding-top: 36rpx;
+  color: #002cc4;
+  font-size: 36rpx;
+}
+
+.chapter-sort .line {
+  padding: 0 20rpx;
+  color: #ccc;
+}
+
+.fontweight {
+  font-weight: 600;
+}

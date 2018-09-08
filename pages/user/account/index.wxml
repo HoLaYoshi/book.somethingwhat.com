@@ -1,0 +1,63 @@
+<!--pages/user/account/index.wxml-->
+<view class="main" style="width:100%;">
+
+  <view class="item top" style='min-height:0;'>
+    <view class="item line-top" style="width:90%;margin-top:40px;"></view>
+  </view>
+
+  <view class="item top">
+    <text style='font-size:1.5em;font-weight:400;padding-bottom:10px;'>
+    <text class='fa fa-normal fa-paw' style="color:#ffd700;"></text> {{UserAccountInfo.MM_Currency_Current}} 喵币
+    </text>
+    <button type="default" class="btn-recharge" bindtap='onOpenRecharge'> 充值 </button>
+    <text class='color-gray font-sm' style='padding-top:5px;'>1元={{UserAccountInfo.MM_Currency_Ratio}}喵币</text>
+  </view>
+
+  <view class="item line-top">
+    <text decode="true">&nbsp;</text>
+  </view>
+
+  <view class="item line-top">
+    <label>我的喵币：{{UserAccountInfo.MM_Currency_Sum}}</label>
+    <text class='color-gray font-sm'>已用{{UserAccountInfo.MM_Currency_Used}}</text>
+  </view>
+
+  <view class="item line-top" bindtap='onShowRecord' data-rechargetype='2'>
+    <label>购买记录</label>
+    <view class="color-gray font-sm" style="float:right">
+      <text>共{{UserAccountInfo.MM_Currency_Buy}}喵币</text>
+      <text class='fa fa-angle-right color-green'></text>
+    </view>
+  </view>
+
+  <view class="item line-top" bindtap='onShowRecord' data-rechargetype='1'>
+    <label>赠送记录</label>
+    <view class="color-gray font-sm" style="float:right">
+      <text>共{{UserAccountInfo.MM_Currency_Give}}喵币</text>
+      <text class='fa fa-angle-right color-green'></text>
+    </view>
+  </view>
+
+  <view class="item line-top"></view>
+
+</view>
+
+<!-- 充值选择 -->
+<view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <!-- <label class='fa fa-close' style='font-size:26px;float:right;'></label> -->
+  <view class="modal-title">充值</view>
+  <view class="modal-content">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <view class="radio" wx:for="{{items}}" wx:key='key'>
+        <label>
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </view>
+    </radio-group>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancelRecharge">取消</view>
+    <view class="btn-confirm" bindtap="onConfrimRecharge">确定</view>
+  </view>
+</view>
