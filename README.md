@@ -1,20 +1,18 @@
 <h1 align="center">喵喵看书</h1>
 
-<div align="center">
-
 ## 
-这是一个看小说的微信小程序，可在微信搜索到小程序：喵喵看书
-当前项目为小程序源码（前端），不包含后端
-QQ群已创建，可加群提问：🎉 875607244 🎉
+- 这是一个看小说的微信小程序，可在微信搜索到小程序：喵喵看书
+- 当前项目为小程序源码（前端），不包含后端
+- QQ群已创建，可加群提问：🎉 875607244 🎉
 
 
 ## 微信扫一扫
-<img src="https://www.somethingwhat.com/lib/web/images/wechat/miaomiaobook.jpg" />
+<img src="https://www.somethingwhat.com/lib/web/images/wechat/miaomiaobook.jpg"/>
 
 
 ## 关于代码的说明
-作者是一个后端开发者，所以这里前端的代码。。。呃，有点乱
-如果你是前端开发者，或许你可以帮到我。。。
+- 作者是一个后端开发者，所以这里前端的代码。。。呃，有点乱
+- 如果你是前端开发者，或许你可以帮到我。。。
 
 
 ## 关于项目的说明
