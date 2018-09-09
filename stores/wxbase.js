@@ -53,7 +53,7 @@ const WXBaseStore = {
             url: 'https://api.weixin.qq.com/sns/jscode2session',
             data: {
               appid: Config.appid,
-              secret: '************************', //这里配置你的小程序secret
+              secret: '************************', //这里配置你的小程序secret，appid也要改: 位置在 /constants/config.js 
               js_code: res.code,
               grant_type: 'authorization_code',
             },
