@@ -9,7 +9,7 @@ const Config = {
     path: '/pages/book/home/index',
     imageUrl: 'https://book.somethingwhat.com/images/cat-avatar.png'
   },
-  version: '2.0.9' //版本号
+  version: '2.1.0' //版本号
 }
 
 export default Config;

@@ -5,8 +5,6 @@ import Ajax from '../../../utils/ajax.js';
 import FormatDate from '../../../utils/date.js';
 import ShareHelper from '../../../utils/share.js';
 
-const app = getApp()
-
 Page({
 
   /**
@@ -173,7 +171,7 @@ Page({
 
     that.setData({ showModal: false })
 
-    WXBaseStore.PrePay(Config.appid, '喵喵看书-喵币充值', totalFee).then(res => {
+    WXBaseStore.PrePay('喵喵看书-喵币充值', totalFee).then(res => {
       console.info('res', res)
       wx.requestPayment({
         'timeStamp': res.timeStamp,

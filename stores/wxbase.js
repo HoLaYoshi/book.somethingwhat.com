@@ -4,87 +4,91 @@ import Key from '../constants/key.js';
 import Ajax from '../utils/ajax.js';
 
 const userInfoStorageKey = 'mmbook_storage_userinfo'
+const app = getApp()
 
 const WXBaseStore = {
   /**
    * 获取openid
    */
   getOpenid: () => {
-    //console.info('setUserInfo', userInfo)
+    //console.info('getOpenid', app.globalData.appid)
     //step1: 获取code相关信息：调用wx.login
     return new Promise(function(resolve, reject) {
       wx.login({
         success: function(res) {
           console.info('wx.login response', res)
-          /* * 线上环境应该用这个方法：通过后台接口获取
-                    //step2: 获取openid相关信息：调用wx.request
-                    wx.request({
-                      url: Config.Proxy + '/Book/Wechat/Jscode2session',
-                      data: {
-                        appKey: 1,//对应数据库表Wechat_App_Config中的Mark_Key配置值
-                        js_code: res.code
-                      },
-                      header: {
-                        'content-type': 'application/json'
-                      },
-                      success: function(res) {
-                        console.info('wx.request response', res)
-                        if (res.data.errcode){
-                          reject('获取openid失败: '+ res.data.errmsg);
-                        }
-                        resolve(res.data.openid)
-                      },
-                      fail: function(msg) {
-                        console.info('wx.request fail', msg)
-                        wx.showToast({
-                          title: '获取openid失败' + '，fail:' + JSON.stringify(msg),
-                          icon: 'none',
-                          duration: 5000
-                        })
-                        reject('获取openid失败')
-                      }
-                    })
-          */
 
-          //实际的线上环境应该用上面的方法，以保证Secret不被外泄。
-          //因为这是开源版本的源码所以这里用下面的方法，以便正常获取openid
-          //step2: 获取openid相关信息：调用wx.request
-          wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session',
-            data: {
-              appid: Config.appid,
-              secret: '************************', //这里配置你的小程序secret，appid也要改: 位置在 /constants/config.js 
-              js_code: res.code,
-              grant_type: 'authorization_code',
-            },
-            header: {
-              'content-type': 'application/json'
-            },
-            success: function(res) {
-              console.info('wx.request response', res)
-              if (res.data.errcode) {
-                reject('获取openid失败: ' + res.data.errmsg);
-                if (res.data.errcode == 40125) {
-                  wx.showModal({
-                    title: '提示',
-                    content: '请先配置你的小程序secret。全局搜索代码【secret】你就能找到位置了',
-                  })
+          if (app.globalData.appid == Config.appid) {
+            //线上环境应该用这个方法：通过后台接口获取
+            //step2: 获取openid相关信息：调用wx.request
+            wx.request({
+              url: Config.Proxy + '/Book/Wechat/Jscode2session',
+              data: {
+                appKey: 1, //对应数据库表Wechat_App_Config中的Mark_Key配置值
+                js_code: res.code
+              },
+              header: {
+                'content-type': 'application/json'
+              },
+              success: function(res) {
+                console.info('wx.request response', res)
+                if (res.data.errcode) {
+                  reject('获取openid失败: ' + res.data.errmsg);
                 }
+
+                console.info('res.data', res.data)
+
+                resolve(res.data)
+              },
+              fail: function(msg) {
+                console.info('wx.request fail', msg)
+                wx.showToast({
+                  title: '获取openid失败' + '，fail:' + JSON.stringify(msg),
+                  icon: 'none',
+                  duration: 5000
+                })
+                reject('获取openid失败')
               }
-              resolve(res.data.openid)
-            },
-            fail: function(msg) {
-              console.info('wx.request fail', msg)
-              wx.showToast({
-                title: '获取openid失败' + '，fail:' + JSON.stringify(msg),
-                icon: 'none',
-                duration: 5000
-              })
-              reject('获取openid失败')
-            }
-          })
-
-
+            })
+          } else {
+            //实际的线上环境应该用上面的方法，以保证Secret不被外泄。
+            //因为这是开源版本的源码所以这里用下面的方法，以便正常获取openid
+            //step2: 获取openid相关信息：调用wx.request
+            wx.request({
+              url: 'https://api.weixin.qq.com/sns/jscode2session',
+              data: {
+                appid: app.globalData.appid,
+                secret: '************************', //这里配置你的小程序secret
+                js_code: res.code,
+                grant_type: 'authorization_code',
+              },
+              header: {
+                'content-type': 'application/json'
+              },
+              success: function(res) {
+                console.info('wx.request response', res)
+                if (res.data.errcode) {
+                  reject('获取openid失败: ' + res.data.errmsg);
+                  if (res.data.errcode == 40125) {
+                    wx.showModal({
+                      title: '提示',
+                      content: '请先配置你的小程序secret。全局搜索代码【secret】你就能找到位置了',
+                    })
+                  }
+                }
+                resolve(res.data.openid)
+              },
+              fail: function(msg) {
+                console.info('wx.request fail', msg)
+                wx.showToast({
+                  title: '获取openid失败' + '，fail:' + JSON.stringify(msg),
+                  icon: 'none',
+                  duration: 5000
+                })
+                reject('获取openid失败')
+              }
+            })
+          }
         },
         fail: function(res) {
           wx.showToast({
@@ -116,13 +120,13 @@ const WXBaseStore = {
   /**
    * 微信预支付
    */
-  PrePay: (appid, title, total_fee) => {
+  PrePay: (title, total_fee) => {
     return new Promise(function(resolve, reject) {
       //请求地址
       const url = Config.Proxy + '/Book/WechatPay/Prepay';
       //参数
       const data = {
-        appid: appid,
+        appid: app.globalData.appid,
         title: title,
         total_fee: total_fee
       }

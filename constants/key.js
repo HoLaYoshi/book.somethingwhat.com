@@ -6,6 +6,7 @@ const storageKeyPrefix = 'mmbook_storage'
 const Key = {
   storageKey: {
     openid: 'openid',
+    token: 'token',
     userinfo: storageKeyPrefix + '_' + 'userinfo' + version,
     userpreference: storageKeyPrefix + '_' + 'userpreference' + version,
     userSelectedSearchRule: storageKeyPrefix + '_' + 'userSelectedSearchRule' + version

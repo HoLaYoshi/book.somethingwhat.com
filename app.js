@@ -35,8 +35,13 @@ App({
 
       });
     }
+    //访问当前小程序或插件帐号信息
+    var accountInfo = wx.getAccountInfoSync();
+    this.globalData.appid = accountInfo.miniProgram.appId
+    //console.info('accountInfo', accountInfo, this.globalData)
   },
   globalData: {
+    appid: null,
     openid: null,
   }
 })

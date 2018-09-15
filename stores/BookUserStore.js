@@ -2,6 +2,7 @@ import Ajax from '../utils/ajax.js';
 import Config from '../constants/config.js';
 import WXBaseStore from '../stores/wxbase.js';
 
+const app = getApp()
 /**
  * 用户信息
  */
@@ -10,13 +11,14 @@ const BookUserStore = {
    * 获取指定openid的数据库用户信息（不存在则创建）
    */
   GetBookUserInfo: () => {
+    //console.info('获取指定openid的数据库用户信息（不存在则创建）', app)
     return new Promise(function(resolve, reject) {
       const wxuser = WXBaseStore.getUserInfoCache()
       //请求地址
       const url = Config.Proxy + '/Book/BookUser/GetUserInfo';
       //参数
       const data = {
-        Appid: Config.appid,
+        Appid: app.globalData.appid,
         Openid: wxuser.openid,
         NickName: wxuser.nickName,
         AvatarUrl: wxuser.avatarUrl,

@@ -6,18 +6,20 @@ import Key from '../constants/key.js';
 const Ajax = {
   httpRequest: (method, url, params, contentType) => {
     params.openid = wx.getStorageSync(Key.storageKey.openid);
+    const token = wx.getStorageSync(Key.storageKey.token);
     //console.info('httpRequest', method, url, params, contentType)
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
       wx.request({
         url: url,
         data: params,
         header: {
           'content-type': contentType,
-          'App-From': 'miniprogram'
+          'App-From': 'miniprogram',
+          'cat-token': token,
         },
         method: method,
-        success: function (res) {
-          //console.info('httpRequest', res)
+        success: function(res) {
+          console.info('httpRequest', res)
           if (res.statusCode != 200 || res.data.Code < 0) {
 
             let msg = (res.data.Msg || ('错误码：' + res.statusCode));
@@ -30,11 +32,10 @@ const Ajax = {
               duration: 2000
             })
             reject(msg)
-          }
-          else
+          } else
             resolve(res.data.Data);
         },
-        fail: function (res) {
+        fail: function(res) {
           console.info('wx.request fail', res, res.errMsg)
           const msg = '远程服务器返回异常' + res.errMsg;
           wx.showToast({

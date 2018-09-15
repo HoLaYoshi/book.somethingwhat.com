@@ -154,8 +154,8 @@ Page({
       icon: 'loading',
       duration: 2000
     })
-    WXBaseStore.getOpenid().then(openid => {
-        if (!openid) {
+    WXBaseStore.getOpenid().then(data => {
+        if (!data.openid) {
           wx.showToast({
             title: 'openid获取失败，请退出微信后再进入重试',
             icon: 'none',
@@ -164,14 +164,15 @@ Page({
           return;
         }
 
-        userInfo.openid = openid
+        userInfo.openid = data.openid
         //关闭蒙层
         that.setData({
           showPreLayer: false
         })
         //本地缓存用户信息
         wx.setStorageSync(Key.storageKey.userinfo, userInfo)
-        wx.setStorageSync(Key.storageKey.openid, openid)
+        wx.setStorageSync(Key.storageKey.openid, data.openid)
+        wx.setStorageSync(Key.storageKey.token, data.token)
         //创建用户（数据库）
         BookUserStore.GetBookUserInfo().then(res => {
           //console.info('已创建成功', Page)
