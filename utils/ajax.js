@@ -5,7 +5,7 @@ import Key from '../constants/key.js';
  */
 const Ajax = {
   httpRequest: (method, url, params, contentType) => {
-    params.openid = wx.getStorageSync(Key.storageKey.openid);
+    const openid = wx.getStorageSync(Key.storageKey.openid);
     const token = wx.getStorageSync(Key.storageKey.token);
     //console.info('httpRequest', method, url, params, contentType)
     return new Promise(function(resolve, reject) {
@@ -16,6 +16,7 @@ const Ajax = {
           'content-type': contentType,
           'App-From': 'miniprogram',
           'cat-token': token,
+          'cat-openid': openid
         },
         method: method,
         success: function(res) {
