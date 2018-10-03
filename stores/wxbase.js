@@ -55,7 +55,8 @@ const WXBaseStore = {
             //因为这是开源版本的源码所以这里用下面的方法，以便正常获取openid
             //step2: 获取openid相关信息：调用wx.request
             wx.request({
-              url: 'https://api.weixin.qq.com/sns/jscode2session',
+              //url: 'https://api.weixin.qq.com/sns/jscode2session',
+              url: Config.Proxy + '/Book/Wechat/Jscode2session_Test',
               data: {
                 appid: app.globalData.appid,
                 secret: '************************', //这里配置你的小程序secret
@@ -76,7 +77,7 @@ const WXBaseStore = {
                     })
                   }
                 }
-                resolve(res.data.openid)
+                resolve(res.data)
               },
               fail: function(msg) {
                 console.info('wx.request fail', msg)
