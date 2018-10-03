@@ -47,7 +47,7 @@ const WXBaseStore = {
                   icon: 'none',
                   duration: 5000
                 })
-                reject('获取openid失败')
+                reject('获取openid失败：' + JSON.stringify(msg))
               }
             })
           } else {
@@ -86,7 +86,7 @@ const WXBaseStore = {
                   icon: 'none',
                   duration: 5000
                 })
-                reject('获取openid失败')
+                reject('获取openid失败：' + JSON.stringify(msg))
               }
             })
           }
