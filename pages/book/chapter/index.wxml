@@ -6,10 +6,13 @@
     <!-- <view class="title" style="{{css_font_color}}">{{bookInfo.ChapterName}}</view> -->
   </block>
 
-  <block wx:if="{{MM_Currency<0}}">
-    <view style='text-align: center;padding-top: 20%;line-height: 30px;'>
+  <block wx:if="{{bookInfo.Currency<0}}">
+    <view style='text-align: center;padding-bottom: 30px;line-height: 30px;'>
       <view>喵币已经用完了...</view>
-      <view style='color:green;' bindtap='onRedirectToUserPage'>点击此处跳转到个人中心兑换喵币</view>
+      <!-- <view style='color:green;' bindtap='onRedirectToUserPage'>点击此处跳转到个人中心兑换喵币</view> -->
+      <view style='color:green;'>
+        <navigator class='fa fa-user' url="../../user/home/index" hover-class="navigator-hover"> 点击此处跳转到个人中心兑换喵币</navigator>
+      </view>
     </view>
   </block>
 

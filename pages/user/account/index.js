@@ -174,11 +174,11 @@ Page({
     WXBaseStore.PrePay('喵喵看书-喵币充值', totalFee).then(res => {
       console.info('res', res)
       wx.requestPayment({
-        'timeStamp': res.timeStamp,
-        'nonceStr': res.nonceStr,
-        'package': res.package,
+        'timeStamp': res.TimeStamp,
+        'nonceStr': res.NonceStr,
+        'package': res.Package,
         'signType': 'MD5',
-        'paySign': res.paySign,
+        'paySign': res.PaySign,
         'success': function (res) {
           console.info('success', res)
           //重新获取用户信息（数据库中）

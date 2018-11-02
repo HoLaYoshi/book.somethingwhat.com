@@ -50,15 +50,29 @@
     </view>
   </view>
 
-  <view class="item line-top">
-    <text decode="true">&nbsp;</text>
-  </view>
-
   <view class="item line-top" bindtap='onRedirectToMessage'>
     <label>系统信息</label>
     <view class="color-gray font-sm" style="float:right">
       <text class='fa fa-angle-right color-green'></text>
     </view>
+  </view>
+
+  <view class="item line-top">
+    <text decode="true">&nbsp;</text>
+  </view>
+
+  <view class="item line-top" style="padding:0px 0px;">
+    <!-- <label>打卡趣</label>
+    <view class="color-gray font-sm" style="float:right">
+      <text class='fa fa-angle-right color-green'></text>
+    </view> -->
+    <navigator target="miniProgram" open-type="navigate" app-id="wx8fdda377945f70d1" style="padding:8px 10px;">
+      <label>打卡趣</label>
+      <view class="color-gray font-sm" style="float:right">
+        <text class='fa fa-angle-right color-green'></text>
+      </view>
+    </navigator>
+
   </view>
 
   <view class="item line-top"></view>
